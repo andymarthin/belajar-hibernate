@@ -1,1 +1,6 @@
+id/web/marthin/belajarHibernate/repository/MahasiswaRepository.class
+id/web/marthin/belajarHibernate/repository/MahasiswaRepositoryImpl.class
 id/web/marthin/belajarHibernate/App.class
+id/web/marthin/belajarHibernate/domain/JenisKelamin.class
+id/web/marthin/belajarHibernate/Util/HibernateUtil.class
+id/web/marthin/belajarHibernate/domain/Mahasiswa.class
