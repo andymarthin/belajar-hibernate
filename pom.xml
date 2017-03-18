@@ -24,12 +24,11 @@
 	    <version>4.3.10.Final</version>
 	  </dependency>
 
-	  <!-- database hsqldb -->
-	  <dependency>
-	    <groupId>org.hsqldb</groupId>
-	    <artifactId>hsqldb</artifactId>
-	    <version>2.3.3</version>
-	  </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>1.4.193</version>
+            </dependency>
 
 	  <!--slf4j-->
 	  <dependency>
