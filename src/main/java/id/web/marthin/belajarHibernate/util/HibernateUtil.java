@@ -1,4 +1,4 @@
-package id.web.marthin.belajarHibernate.Util;
+package id.web.marthin.belajarHibernate.util;
 
 import id.web.marthin.belajarHibernate.repository.MahasiswaRepository;
 import id.web.marthin.belajarHibernate.repository.MahasiswaRepositoryImpl;

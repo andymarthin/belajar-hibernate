@@ -107,7 +107,7 @@ public class MahasiswaRepositoryImpl implements MahasiswaRepository{
     }
 
     @Override
-    public List<Mahasiswa> getMahasiswas(){
+    public List<Mahasiswa> getAllMahasiswa(){
         Session session = sessionFactory.openSession();
         List<Mahasiswa> mahasiswas;
 

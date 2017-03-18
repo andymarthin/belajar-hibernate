@@ -12,5 +12,5 @@ public interface MahasiswaRepository {
     void update(Mahasiswa mahasiswa);
     void delete(Mahasiswa mahasiswa);
     Mahasiswa getMahasiswa(String npm);
-    List<Mahasiswa> getMahasiswas();
+    List<Mahasiswa> getAllMahasiswa();
 }

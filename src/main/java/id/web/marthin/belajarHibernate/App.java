@@ -1,6 +1,6 @@
 package id.web.marthin.belajarHibernate;
 
-import id.web.marthin.belajarHibernate.Util.HibernateUtil;
+import id.web.marthin.belajarHibernate.util.HibernateUtil;
 import id.web.marthin.belajarHibernate.domain.JenisKelamin;
 import id.web.marthin.belajarHibernate.domain.Mahasiswa;
 import id.web.marthin.belajarHibernate.repository.MahasiswaRepository;
@@ -22,7 +22,7 @@ public class App
         Logger logger = LoggerFactory.getLogger(App.class);
 
         Mahasiswa mahasiswa = new Mahasiswa();
-        mahasiswa.setNpm("282738723");
+        mahasiswa.setNpm("1234321");
         mahasiswa.setNama("Andy Marhin Christo");
         mahasiswa.setKelas("3IA04");
         mahasiswa.setJenisKelamin(JenisKelamin.PRIA);
@@ -30,19 +30,19 @@ public class App
 
         mahasiswaRepository.save(mahasiswa);
 
-        List<Mahasiswa> mahasiswas = mahasiswaRepository.getMahasiswas();
+        List<Mahasiswa> mahasiswas = mahasiswaRepository.getAllMahasiswa();
 
-//        for(Mahasiswa mahasiswaData: mahasiswas){
-//            logger.info("Npm           : {}", mahasiswaData.getNpm());
-//            logger.info("Nama          : {}", mahasiswaData.getNama());
-//            logger.info("Kelas         : {}", mahasiswaData.getKelas());
-//            logger.info("Jenis Kelamin : {}", mahasiswaData.getJenisKelamin());
-//            logger.info("Tanggal Lahir : {}", mahasiswaData.getTanggalLahir());
-//        }
+        for(Mahasiswa mahasiswaData: mahasiswas){
+            logger.info("Npm           : {}", mahasiswaData.getNpm());
+            logger.info("Nama          : {}", mahasiswaData.getNama());
+            logger.info("Kelas         : {}", mahasiswaData.getKelas());
+            logger.info("Jenis Kelamin : {}", mahasiswaData.getJenisKelamin());
+            logger.info("Tanggal Lahir : {}", mahasiswaData.getTanggalLahir());
+        }
 
-        Mahasiswa mahasiswa1 = mahasiswaRepository.getMahasiswa("282738723");
+        Mahasiswa mahasiswa1 = mahasiswaRepository.getMahasiswa("1234321");
         mahasiswa1.setNama("Andy Marhin Christo Ganteng");
-
+        
         mahasiswaRepository.update(mahasiswa1);
 
         mahasiswaRepository.delete(mahasiswa1);
