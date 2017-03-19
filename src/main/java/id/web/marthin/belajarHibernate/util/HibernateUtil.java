@@ -1,5 +1,7 @@
 package id.web.marthin.belajarHibernate.util;
 
+import id.web.marthin.belajarHibernate.repository.JurusanRepository;
+import id.web.marthin.belajarHibernate.repository.JurusanRepositoryImpl;
 import id.web.marthin.belajarHibernate.repository.MahasiswaRepository;
 import id.web.marthin.belajarHibernate.repository.MahasiswaRepositoryImpl;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -11,6 +13,7 @@ import org.hibernate.SessionFactory;
 public class HibernateUtil {
     private static final SessionFactory sessionFactory;
     private static final MahasiswaRepository MAHASISWA_REPOSITORY;
+    private static final JurusanRepository JURUSAN_REPOSITORY;
     
     static {
         try {
@@ -18,6 +21,7 @@ public class HibernateUtil {
             // config file.
             sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
             MAHASISWA_REPOSITORY = new MahasiswaRepositoryImpl(sessionFactory);
+            JURUSAN_REPOSITORY = new JurusanRepositoryImpl(sessionFactory);
         } catch (Throwable ex) {
             // Log the exception. 
             System.err.println("Initial SessionFactory creation failed." + ex);
@@ -31,5 +35,9 @@ public class HibernateUtil {
 
     public static MahasiswaRepository getMahasiswaRepository() {
         return MAHASISWA_REPOSITORY;
+    }
+    
+    public static JurusanRepository getJurusanRepository(){
+        return JURUSAN_REPOSITORY;
     }
 }

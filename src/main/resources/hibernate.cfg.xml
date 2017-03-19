@@ -15,5 +15,6 @@
         <property name="hibernate.format_sql">true</property>
 
         <mapping class="id.web.marthin.belajarHibernate.domain.Mahasiswa" />
+        <mapping class="id.web.marthin.belajarHibernate.domain.Jurusan" />
     </session-factory>
 </hibernate-configuration>
