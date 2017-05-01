@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
+import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 /**
  *
  * @author marthin
@@ -21,8 +22,12 @@ public class HibernateUtil {
         try {
             // Create the SessionFactory from standard (hibernate.cfg.xml) 
             // config file.
-            Configuration configuration = new Configuration();
-            configuration.configure();
+            StandardPBEStringEncryptor encryptor =new StandardPBEStringEncryptor();
+            encryptor.setPassword("m4rT1nG@nt3ng");
+            encryptor.setAlgorithm("PBEWITHMD5ANDDES");
+            Configuration configuration = new Configuration().configure();
+            String pass=encryptor.decrypt(configuration.getProperty("hibernate.connection.password"));
+            configuration.setProperty("hibernate.connection.password",pass);  
             serviceRegistry = new StandardServiceRegistryBuilder().applySettings(
                         configuration.getProperties()).build();
             sessionFactory = configuration.buildSessionFactory(serviceRegistry);
